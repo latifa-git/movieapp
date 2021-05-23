@@ -1,18 +1,48 @@
 import React from "react";
-import { Card,Button } from "react-bootstrap";
+import { Card, Button } from "react-bootstrap";
+import "./FilmCard.css";
 //import ReactStars from "react-rating-stars-component";
+
 const FilmCard = ({ movie }) => {
   return (
-    <Card style={{ width: "19rem" }} className=" mx-4 my-3">
-      <Card.Img variant="top" src={movie.imgSRC} style={{ height: "70%" }} />
-      <Card.Body>
-        <Card.Title>{movie.Title}</Card.Title>
-        <Card.Text>
-          {movie.Views}
-        </Card.Text>
-        <Button variant="primary">Go somewhere</Button>
-      </Card.Body>
-    </Card>
+    
+    <body>
+    
+      <Card className=" card" style={{ width: "19rem" }}  >
+      <div className= "mx-4 my-3">
+        <Card.Img
+          className="image"
+          variant="top"
+          src={movie.ImgSRC}
+          style={{ height: "100%" }}
+        />
+        
+        <Card.Body className="details">
+          <div className="center">
+            <h1>
+              tilte :{movie.Title}
+              <br></br>
+              <span>Release Date: {movie.Release_Date}</span>
+              Type: {movie.Type}
+              <br></br>
+              Global_assessment: {movie.Global_assessment}
+              <br></br>
+              The language Country: {movie.The_language_Country}
+              <br></br>
+              Quality:{movie.The_quality}
+              <br></br>
+              <br></br>
+              views: {movie.Views}
+              <br></br>
+            </h1>
+          </div>
+          <Card.Text></Card.Text>
+          <Button variant="primary">Go somewhere</Button>
+        </Card.Body>
+        </div>
+      </Card>
+
+    </body>
   );
 };
 
