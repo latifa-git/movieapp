@@ -3,11 +3,13 @@ import React from "react";
 import { Form, FormControl, Navbar } from "react-bootstrap";
 import ReactStars from "react-rating-stars-component";
 
-const Filtre = ({ handleChange, title, ratingChanged, rate }) => {
-  const changeRating = (newRating) => {};
+const Filter = ({ handleChange, title,ratingChanged,rate }) => {
+
   return (
-    <Navbar bg="dark" variant="dark">
-      
+    <Navbar bg="dark" variant="dark" className="d-flex justify-content-around">
+      <Navbar.Brand href="#home" style={{ fontSize: "30px", color: "red" }}>
+        Netflix
+      </Navbar.Brand>
       <div>
         <Form inline>
           <FormControl
@@ -20,7 +22,7 @@ const Filtre = ({ handleChange, title, ratingChanged, rate }) => {
         </Form>
         <ReactStars
           count={5}
-          onChange={changeRating}
+          onChange={ratingChanged}
           size={30}
           activeColor="#ffd700"
           isHalf={true}
@@ -30,4 +32,4 @@ const Filtre = ({ handleChange, title, ratingChanged, rate }) => {
   );
 };
 
-export default Filtre;
+export default Filter;

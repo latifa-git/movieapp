@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { Button, Modal } from 'react-bootstrap';
 
-const FilmAdd = (handleAdd) => {
+const FilmAdd = ({handleAdd}) => {
     const [show, setShow] = useState(false);
 
   const handleClose = () => setShow(false);
@@ -11,25 +11,24 @@ const FilmAdd = (handleAdd) => {
   const [url, setUrl] = useState("")
   const [rate, setRate] = useState(0)
   const handleSubmit = (e) => {
-    //e.preventDefault()
-  }
+    e.preventDefault();
+
     const newMovie = {
-        id:Math.random(),
-        title,
-        description,
-        posterUrl:url,
-        rate
-    }
-    if(title && description && rate && url){
-      handleAdd(newMovie)
-      setTitle("")
-      setUrl("")
-      setRate()
-      setDescription("")
-      handleClose()
-     }
-     else alert("Fill all the fields")
-    
+      id: Math.random(),
+      title,
+      description,
+      posterUrl: url,
+      rate
+    };
+    if (title && description && rate && url) {
+      handleAdd(newMovie);
+      setTitle("");
+      setUrl("");
+      setRate();
+      setDescription("");
+      handleClose();
+    } else alert("Fill all the fields");
+  };
     return (
         <div>
             <Button variant="primary" onClick={handleShow}>
