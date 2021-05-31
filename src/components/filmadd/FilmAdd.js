@@ -15,10 +15,10 @@ const FilmAdd = ({handleAdd}) => {
 
     const newMovie = {
       id: Math.random(),
-      title,
-      description,
-      posterUrl: url,
-      rate
+      Title:title,
+      Descption:description,
+      ImgSRC: url,
+      Global_assessment:rate
     };
     if (title && description && rate && url) {
       handleAdd(newMovie);
