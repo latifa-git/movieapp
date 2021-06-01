@@ -1,4 +1,5 @@
 import React from "react";
+
 import FilmCard from "../filmcard/FilmCard";
 
 const FilmList = ({filmlist}) => {
@@ -7,7 +8,7 @@ const FilmList = ({filmlist}) => {
         {filmlist.map((movie) => (
           <FilmCard movie={movie} key={movie.id} />
         ))}
-     
+  
     </div>
   );
 };

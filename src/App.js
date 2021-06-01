@@ -5,6 +5,9 @@ import FilmList from "./components/filmlist/FilmList";
 import FilmAdd from "./components/filmadd/FilmAdd";
 import Filtre from "./components/filtre/Filtre";
 import "bootstrap/dist/css/bootstrap.min.css";
+import { BrowserRouter as Router, Route } from "react-router-dom";
+
+import Roooter from "./components/rooter/Roooter";
 
 function App() {
   const [filmlist, setFilmlist] = useState(Films);
@@ -21,20 +24,30 @@ function App() {
   };
   return (
     <div className="App">
-      <Filtre
-        handleChange={handleChange}
-        title={title}
-        ratingChanged={ratingChanged}
-        rate={rate}
-      />
-      <FilmList
-        filmlist={filmlist.filter(
-          (movie) =>
-            movie.Title.toUpperCase().includes(title.toUpperCase()) &&
-            movie.Global_assessment >= rate
-        )}
-      />
-      <FilmAdd handleAdd={handleAdd} />
+      <Router>
+        <Filtre
+          handleChange={handleChange}
+          title={title}
+          ratingChanged={ratingChanged}
+          rate={rate}
+        />  <Route path="/" render={() =>  
+      
+        <FilmList
+          filmlist={filmlist.filter(
+            (movie) =>
+              movie.Title.toUpperCase().includes(title.toUpperCase()) &&
+              movie.Global_assessment >= rate
+          )}
+        />}
+        />
+        <FilmAdd handleAdd={handleAdd} />
+
+        <Route
+          path="/:Id"  exact
+          render={(props) => <Roooter {...props} filmlist={filmlist} />}
+        
+        />
+      </Router>
     </div>
   );
 }

@@ -1,5 +1,6 @@
 import React from "react";
 import { Card, Button } from "react-bootstrap";
+import { Link } from "react-router-dom";
 import "./FilmCard.css";
 //import ReactStars from "react-rating-stars-component";
 
@@ -21,14 +22,12 @@ const FilmCard = ({ movie }) => {
                 tilte :{movie.Title}
                 <br></br>
                 <span>
-                  Release Date: {movie.Release_Date}
-                  Type: {movie.Type}
+                 
+                  
                   <br></br>
                   Global_assessment: {movie.Global_assessment}
-                  <br></br>
-                  The language Country: {movie.The_language_Country}
-                  <br></br>
-                  Quality:{movie.The_quality}
+                  
+                
                   <br></br>
                   <br></br>
                   views: {movie.Views}
@@ -37,7 +36,7 @@ const FilmCard = ({ movie }) => {
               </h1>
             </div>
             <Card.Text></Card.Text>
-            <Button variant="primary">Go somewhere</Button>
+         <Link to={`/${movie.id}`}> <Button  variant="primary">details</Button></Link>
           </Card.Body>
         </div>
       </Card>
