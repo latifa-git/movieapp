@@ -30,7 +30,7 @@ function App() {
           title={title}
           ratingChanged={ratingChanged}
           rate={rate}
-        />  <Route path="/" render={() =>  
+        />  <Route path="/" exact render={() =>  
       
         <FilmList
           filmlist={filmlist.filter(
@@ -43,7 +43,7 @@ function App() {
         <FilmAdd handleAdd={handleAdd} />
 
         <Route
-          path="/:Id"  exact
+          path="/films/:Id"  exact
           render={(props) => <Roooter {...props} filmlist={filmlist} />}
         
         />

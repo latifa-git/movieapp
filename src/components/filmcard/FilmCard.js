@@ -36,7 +36,7 @@ const FilmCard = ({ movie }) => {
               </h1>
             </div>
             <Card.Text></Card.Text>
-         <Link to={`/${movie.id}`}> <Button  variant="primary">details</Button></Link>
+         <Link to={`/films/${movie.Id}`}> <Button  variant="primary">details</Button></Link>
           </Card.Body>
         </div>
       </Card>

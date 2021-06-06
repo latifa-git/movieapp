@@ -7,7 +7,7 @@ const Roooter = ({filmlist, match}) => {
   const film = filmlist.find(el => el.Id.toString() === match.params.Id.toString()
   );
   return (
-    <div>
+    <div style={{color:"white"}}>
       <h2> welcome</h2>
       <h2> {film.Descption}</h2>
    
